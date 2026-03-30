@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>釜山小旅行 ✈️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgOffWhite: '#F7F5F0', // 燕麥白背景
+                        textMain: '#5C544E', // 暖灰字體
+                        accentGreen: '#A3B19B', // 灰綠色按鈕
+                        tagFood: '#E59A8D', // 鮭魚粉 (美食)
+                        tagShop: '#D4B886', // 奶茶色 (購物)
+                        tagAlert: '#899BB1', // 灰藍色 (提醒)
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #E5E5E5;
+            font-family: 'Helvetica Neue', Arial, 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', sans-serif;
+            color: #5C544E;
+        }
+        .app-container {
+            max-width: 414px;
+            min-height: 100vh;
+            margin: 0 auto;
+            background-color: #F7F5F0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 80px;
+        }
+        .glass-header {
+            background: rgba(247, 245, 240, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <header class="glass-header sticky top-0 z-50 px-5 py-4 border-b border-gray-200">
+        <div class="flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider">Busan Trip</h1>
+            <div class="text-sm font-medium flex items-center bg-white px-3 py-1 rounded-full shadow-sm">
+                <i class="fa-solid fa-cloud-sun text-yellow-500 mr-2"></i> 18°C
+            </div>
+        </div>
+        <div class="flex space-x-4 mt-4 overflow-x-auto no-scrollbar pb-1 text-sm font-bold">
+            <button id="btn-day1" class="tab-btn text-textMain border-b-2 border-textMain pb-1 whitespace-nowrap" onclick="switchTab('day1')">Day 1 (5/23)</button>
+            <button id="btn-day2" class="tab-btn text-gray-400 border-b-2 border-transparent pb-1 whitespace-nowrap hover:text-textMain" onclick="switchTab('day2')">Day 2 (5/24)</button>
+            <button id="btn-day3" class="tab-btn text-gray-400 border-b-2 border-transparent pb-1 whitespace-nowrap hover:text-textMain" onclick="switchTab('day3')">Day 3 (5/25)</button>
+        </div>
+    </header>
+
+    <main class="p-5" id="itinerary-content">
+        
+        <div id="day1" class="space-y-6">
+            <div class="card p-4">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">17:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">飯店放行李</h3>
+                        <p class="text-sm text-gray-500 mb-2"><i class="fa-solid fa-location-dot mr-1"></i> Gemstay (西面站)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagShop">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">18:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">文青雜貨大採買</h3>
+                        <p class="text-sm text-gray-500 mb-2">Magarin Studio, Poset Jeonpo 等</p>
+                        <div class="bg-orange-50 p-2 rounded text-sm mb-3 text-orange-800">
+                            <strong>💡 導遊筆記：</strong> Poset 有非常多漂亮的明信片，很好買！
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagFood">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">19:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">烤肉的男人</h3>
+                        <span class="inline-block px-2 py-1 text-xs text-white bg-tagFood rounded mb-2">必吃美食</span>
+                        <a href="https://naver.me/xll3ale6" target="_blank" class="inline-block w-full text-center bg-accentGreen text-white font-medium py-2 rounded-lg text-sm shadow-sm">
+                            <i class="fa-solid fa-location-arrow mr-1"></i> Naver Map 導航
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagAlert">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">21:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">廣安里無人機表演</h3>
+                        <p class="text-sm text-gray-500 mb-2">最佳觀賞區：起飛區旁沙灘</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="day2" class="space-y-6 hidden">
+            <div class="card p-4 border-l-4 border-tagAlert">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">08:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">出發前往青沙浦</h3>
+                        <p class="text-sm text-gray-500 mb-2">搭綠線至海雲台站，7號出口轉 Kakao Taxi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagFood">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">09:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">海景早午餐</h3>
+                        <p class="text-sm text-gray-500 mb-2">The Art 咖啡 或 Ribereuta 咖啡</p>
+                        <div class="bg-orange-50 p-2 rounded text-sm mb-3 text-orange-800">
+                            <strong>💡 導遊筆記：</strong> 10:30 記得去「灌籃高手平交道」拍照，光影非常適合發社群動態！
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagAlert">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">11:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">海雲台膠囊列車</h3>
+                        <p class="text-sm text-gray-500 mb-2">青沙浦出發 ➔ 尾浦</p>
+                        <span class="inline-block px-2 py-1 text-xs text-white bg-tagAlert rounded mb-2">記得提前截圖預約 QR Code</span>
+                        <div class="bg-red-50 p-2 rounded text-sm mb-3 text-red-800">
+                            <strong>🥐 必吃清單：</strong> 附近的 Jayeon Do 鹽麵包非常紅！
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagFood">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">12:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">水邊最好豬肉湯飯</h3>
+                        <span class="inline-block px-2 py-1 text-xs text-white bg-tagFood rounded mb-2">釜山必吃</span>
+                        <a href="https://naver.me/5Jq380Mh" target="_blank" class="inline-block w-full text-center bg-gray-100 text-gray-700 font-medium py-2 rounded-lg text-sm shadow-sm mt-2">
+                            <i class="fa-solid fa-location-arrow mr-1"></i> Naver Map
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagShop">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">13:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">海理團路散策</h3>
+                        <span class="inline-block px-2 py-1 text-xs text-white bg-tagShop rounded mb-2">必買伴手禮</span>
+                        <p class="text-sm text-gray-500 mb-2">釜山大海三明治、Kaebeorin屋</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagFood">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">19:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">晚餐：世界村莊土豆湯</h3>
+                        <p class="text-sm text-gray-500 mb-2"><i class="fa-solid fa-location-dot mr-1"></i> 回西面鬧區吃</p>
+                        <a href="https://naver.me/GWW78StV" target="_blank" class="inline-block w-full text-center bg-accentGreen text-white font-medium py-2 rounded-lg text-sm shadow-sm mt-2">
+                            <i class="fa-solid fa-location-arrow mr-1"></i> Naver Map
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="day3" class="space-y-6 hidden">
+            <div class="card p-4 border-l-4 border-tagAlert">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">09:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">松島海上纜車</h3>
+                        <p class="text-sm text-gray-500 mb-2">交通：抵達松島約需 42 分鐘</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagFood">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">10:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">白淺灘文化村</h3>
+                        <p class="text-sm text-gray-500 mb-2">推薦咖啡廳：having moment</p>
+                        <div class="bg-orange-50 p-2 rounded text-sm mb-3 text-orange-800">
+                            <strong>💡 導遊筆記：</strong> 這裡充滿文藝氣息與可愛小店，非常適合慢走拍照。
+                        </div>
+                        <a href="https://naver.me/xKyJORxX" target="_blank" class="inline-block w-full text-center bg-gray-100 text-gray-700 font-medium py-2 rounded-lg text-sm shadow-sm">
+                            <i class="fa-solid fa-location-arrow mr-1"></i> having moment 導航
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 border-l-4 border-tagShop">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">14:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">新世界百貨 (Centum City)</h3>
+                        <span class="inline-block px-2 py-1 text-xs text-white bg-tagShop rounded mb-2">最後血拚</span>
+                        <p class="text-sm text-gray-500 mb-2">可以去超市找找 GAP 感便利包 (柿餅) 當伴手禮！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tools-section" class="hidden space-y-4">
+            <h2 class="text-xl font-bold mb-4">實用小工具</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="card p-4 flex flex-col items-center justify-center text-center cursor-pointer">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-2 text-xl">
+                        <i class="fa-solid fa-plane"></i>
+                    </div>
+                    <span class="font-bold text-sm">航班資訊</span>
+                </div>
+                <div class="card p-4 flex flex-col items-center justify-center text-center cursor-pointer">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-2 text-xl">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <span class="font-bold text-sm">住宿憑證</span>
+                </div>
+                <div class="card p-4 flex flex-col items-center justify-center text-center cursor-pointer">
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mb-2 text-xl">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <span class="font-bold text-sm">共同記帳</span>
+                </div>
+                <div class="card p-4 flex flex-col items-center justify-center text-center cursor-pointer">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mb-2 text-xl">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="font-bold text-sm">緊急聯絡</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <nav class="absolute bottom-0 w-full bg-white border-t border-gray-200 flex justify-around items-center py-3 pb-6 px-2 text-xs text-gray-400">
+        <button id="nav-itinerary" class="flex flex-col items-center text-textMain" onclick="showSection('itinerary-content')">
+            <i class="fa-solid fa-calendar-days text-xl mb-1"></i>
+            <span>行程</span>
+        </button>
+        <button id="nav-tools" class="flex flex-col items-center hover:text-textMain" onclick="showSection('tools-section')">
+            <i class="fa-solid fa-toolbox text-xl mb-1"></i>
+            <span>工具</span>
+        </button>
+    </nav>
+</div>
+
+<script>
+    // 日期分頁切換邏輯
+    function switchTab(dayId) {
+        // 隱藏所有行程
+        document.getElementById('day1').classList.add('hidden');
+        document.getElementById('day2').classList.add('hidden');
+        document.getElementById('day3').classList.add('hidden');
+        
+        // 重置所有按鈕的樣式
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('text-textMain', 'border-textMain');
+            btn.classList.add('text-gray-400', 'border-transparent');
+        });
+        
+        // 顯示被點擊的行程
+        document.getElementById(dayId).classList.remove('hidden');
+        
+        // 改變被點擊按鈕的樣式
+        const activeBtn = document.getElementById('btn-' + dayId);
+        activeBtn.classList.remove('text-gray-400', 'border-transparent');
+        activeBtn.classList.add('text-textMain', 'border-textMain');
+    }
+
+    // 底部選單切換邏輯
+    function showSection(sectionId) {
+        document.getElementById('itinerary-content').classList.add('hidden');
+        document.getElementById('tools-section').classList.add('hidden');
+        
+        document.getElementById('nav-itinerary').classList.remove('text-textMain');
+        document.getElementById('nav-tools').classList.remove('text-textMain');
+        
+        if(sectionId === 'itinerary-content') {
+            document.getElementById('itinerary-content').classList.remove('hidden');
+            document.getElementById('nav-itinerary').classList.add('text-textMain');
+        } else {
+            document.getElementById('tools-section').classList.remove('hidden');
+            document.getElementById('nav-tools').classList.add('text-textMain');
+        }
+    }
+</script>
+
+</body>
+</html>
