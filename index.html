@@ -169,4 +169,233 @@
             </div>
             
             <div class="card p-4">
-                <div class="
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">19:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">世界村莊馬鈴薯排骨湯</h3>
+                        <span class="inline-block px-2 py-1 text-xs text-white bg-tagFood rounded mb-2 font-bold">晚餐推薦</span>
+                        <p class="text-sm text-gray-500 mb-1">西面站附近</p>
+                        <a href="https://naver.me/GWW78StV" target="_blank" class="link-btn bg-accentGreen text-white shadow-sm">Naver 導航</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="day3" class="space-y-2 hidden">
+            <div class="card p-4">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">09:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">松島跨海纜車</h3>
+                        <span class="inline-block px-2 py-1 text-xs text-white bg-tagAlert rounded mb-2 font-bold">請出示水晶車廂憑證</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-4">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">10:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">白淺灘海景文化村</h3>
+                        <p class="text-sm font-bold text-gray-700">☕ 推薦咖啡廳：having moment</p>
+                        <a href="https://naver.me/xKyJORxX" target="_blank" class="text-xs text-blue-500 underline">Naver 導航</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-4">
+                <div class="flex items-start">
+                    <div class="text-accentGreen font-bold w-14 pt-1">14:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg mb-1">新世界百貨公司逛街</h3>
+                        <span class="inline-block px-2 py-1 text-xs text-white bg-tagBuy rounded mb-2 font-bold">超市特價柿子乾</span>
+                        <p class="text-sm text-gray-500">伴手禮好選擇</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tools-section" class="hidden space-y-4">
+            
+            <div class="flex overflow-x-auto no-scrollbar space-x-3 pb-2 mb-2">
+                <button onclick="showToolCard('tool-shopping')" class="flex flex-col items-center justify-center p-3 w-16 min-w-[4rem] rounded-lg bg-white shadow-sm hover:bg-gray-50 focus:outline-none">
+                    <i class="fa-solid fa-bag-shopping text-purple-500 mb-1 text-lg"></i>
+                    <span class="text-xs font-bold text-gray-600">必買</span>
+                </button>
+                <button onclick="showToolCard('tool-flight')" class="flex flex-col items-center justify-center p-3 w-16 min-w-[4rem] rounded-lg bg-white shadow-sm hover:bg-gray-50 focus:outline-none">
+                    <i class="fa-solid fa-plane text-blue-500 mb-1 text-lg"></i>
+                    <span class="text-xs font-bold text-gray-600">航班</span>
+                </button>
+                <button onclick="showToolCard('tool-hotel')" class="flex flex-col items-center justify-center p-3 w-16 min-w-[4rem] rounded-lg bg-white shadow-sm hover:bg-gray-50 focus:outline-none">
+                    <i class="fa-solid fa-bed text-green-500 mb-1 text-lg"></i>
+                    <span class="text-xs font-bold text-gray-600">住宿</span>
+                </button>
+                <button onclick="showToolCard('tool-budget')" class="flex flex-col items-center justify-center p-3 w-16 min-w-[4rem] rounded-lg bg-white shadow-sm hover:bg-gray-50 focus:outline-none">
+                    <i class="fa-solid fa-wallet text-yellow-500 mb-1 text-lg"></i>
+                    <span class="text-xs font-bold text-gray-600">記帳</span>
+                </button>
+            </div>
+
+            <div id="tool-cards-container">
+                
+                <div id="tool-shopping" class="card p-5 tool-content">
+                    <h3 class="font-bold text-lg mb-3 border-b pb-2"><i class="fa-solid fa-bag-shopping mr-2 text-purple-500"></i>購物清單</h3>
+                    <div class="flex mb-4">
+                        <input type="text" id="shopping-input" placeholder="想買什麼？" class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 text-sm focus:outline-none focus:border-purple-400 bg-gray-50">
+                        <button onclick="addShoppingItem()" class="bg-purple-500 text-white px-4 py-2 rounded-r-lg text-sm font-bold shadow-sm active:bg-purple-600">新增</button>
+                    </div>
+                    <ul id="shopping-list-container" class="space-y-2 text-sm"></ul>
+                </div>
+
+                <div id="tool-flight" class="card p-5 tool-content hidden">
+                    <h3 class="font-bold text-lg mb-3 border-b pb-2">航班資訊</h3>
+                    <p class="text-sm text-gray-500">抵達時間：17:00</p>
+                </div>
+                <div id="tool-hotel" class="card p-5 tool-content hidden">
+                    <h3 class="font-bold text-lg mb-3 border-b pb-2">住宿資訊</h3>
+                    <p class="text-sm text-gray-500">Gem-stay</p>
+                </div>
+                <div id="tool-budget" class="card p-5 tool-content hidden">
+                    <h3 class="font-bold text-lg mb-3 border-b pb-2">旅費記帳板</h3>
+                    <p class="text-sm text-gray-500">記帳功能準備中</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="absolute bottom-0 w-full bg-white border-t border-gray-200 flex justify-around items-center py-3 pb-6 px-2 text-xs text-gray-400">
+        <button id="nav-itinerary" class="flex flex-col items-center text-textMain" onclick="showSection('itinerary-content')">
+            <i class="fa-solid fa-calendar-days text-xl mb-1"></i>
+            <span>行程</span>
+        </button>
+        <button id="nav-tools" class="flex flex-col items-center hover:text-textMain" onclick="showSection('tools-section')">
+            <i class="fa-solid fa-toolbox text-xl mb-1"></i>
+            <span>工具包</span>
+        </button>
+    </nav>
+</div>
+
+<script>
+    // --- 安全的天氣載入機制 ---
+    async function fetchWeather() {
+        const widget = document.getElementById('weather-widget');
+        try {
+            const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=35.1796&longitude=129.0756&current_weather=true');
+            if (!res.ok) throw new Error('連線失敗');
+            const data = await res.json();
+            widget.innerHTML = '<i class="fa-solid fa-cloud-sun text-yellow-500 mr-2"></i> 釜山 ' + data.current_weather.temperature + '°C';
+        } catch (e) {
+            // 如果連不到網路，顯示預設文字，絕對不會當機
+            widget.innerHTML = '<i class="fa-solid fa-cloud-sun text-yellow-500 mr-2"></i> 釜山 18°C';
+        }
+    }
+    fetchWeather();
+
+    // --- 頁籤切換 ---
+    function switchTab(dayId) {
+        document.getElementById('day1').style.display = 'none';
+        document.getElementById('day2').style.display = 'none';
+        document.getElementById('day3').style.display = 'none';
+        
+        document.getElementById('btn-day1').className = 'tab-btn text-gray-400 border-b-2 border-transparent pb-1 whitespace-nowrap hover:text-textMain';
+        document.getElementById('btn-day2').className = 'tab-btn text-gray-400 border-b-2 border-transparent pb-1 whitespace-nowrap hover:text-textMain';
+        document.getElementById('btn-day3').className = 'tab-btn text-gray-400 border-b-2 border-transparent pb-1 whitespace-nowrap hover:text-textMain';
+        
+        document.getElementById(dayId).style.display = 'block';
+        document.getElementById('btn-' + dayId).className = 'tab-btn text-textMain border-b-2 border-textMain pb-1 whitespace-nowrap';
+    }
+
+    function showSection(sectionId) {
+        document.getElementById('itinerary-content').style.display = 'none';
+        document.getElementById('tools-section').style.display = 'none';
+        
+        document.getElementById('nav-itinerary').classList.remove('text-textMain');
+        document.getElementById('nav-tools').classList.remove('text-textMain');
+        
+        if(sectionId === 'itinerary-content') {
+            document.getElementById('itinerary-content').style.display = 'block';
+            document.getElementById('nav-itinerary').classList.add('text-textMain');
+        } else {
+            document.getElementById('tools-section').style.display = 'block';
+            document.getElementById('nav-tools').classList.add('text-textMain');
+            showToolCard('tool-shopping');
+        }
+    }
+
+    function showToolCard(toolId) {
+        document.getElementById('tool-shopping').style.display = 'none';
+        document.getElementById('tool-flight').style.display = 'none';
+        document.getElementById('tool-hotel').style.display = 'none';
+        document.getElementById('tool-budget').style.display = 'none';
+        document.getElementById(toolId).style.display = 'block';
+    }
+
+    // --- 安全的購物清單機制 ---
+    let myShoppingList = [
+        { text: '設計師明信片', done: false },
+        { text: '超市特價柿子乾', done: false }
+    ];
+
+    function loadList() {
+        try {
+            const saved = localStorage.getItem('myList');
+            if (saved) myShoppingList = JSON.parse(saved);
+        } catch (e) {
+            console.log('無法讀取記憶');
+        }
+        renderList();
+    }
+
+    function renderList() {
+        const container = document.getElementById('shopping-list-container');
+        container.innerHTML = '';
+        for (let i = 0; i < myShoppingList.length; i++) {
+            const item = myShoppingList[i];
+            const iconClass = item.done ? 'fa-square-check text-purple-500' : 'fa-square text-gray-300';
+            const textClass = item.done ? 'line-through text-gray-400' : 'text-gray-700 font-medium';
+            
+            container.innerHTML += `
+                <li class="flex items-center justify-between bg-white border border-gray-100 shadow-sm p-3 rounded-lg mb-2">
+                    <div class="flex items-center flex-1 cursor-pointer" onclick="toggleItem(${i})">
+                        <i class="fa-regular ${iconClass} text-xl mr-3"></i>
+                        <span class="${textClass}">${item.text}</span>
+                    </div>
+                    <button onclick="deleteItem(${i})" class="text-gray-300 hover:text-red-400 px-2">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </li>
+            `;
+        }
+        try {
+            localStorage.setItem('myList', JSON.stringify(myShoppingList));
+        } catch (e) {}
+    }
+
+    function addShoppingItem() {
+        const input = document.getElementById('shopping-input');
+        const text = input.value.trim();
+        if (text !== '') {
+            myShoppingList.push({ text: text, done: false });
+            renderList();
+            input.value = ''; 
+        }
+    }
+
+    function toggleItem(index) {
+        myShoppingList[index].done = !myShoppingList[index].done;
+        renderList();
+    }
+
+    function deleteItem(index) {
+        myShoppingList.splice(index, 1);
+        renderList();
+    }
+
+    // 初始化頁面狀態
+    document.getElementById('day2').style.display = 'none';
+    document.getElementById('day3').style.display = 'none';
+    loadList();
+</script>
+
+</body>
+</html>
